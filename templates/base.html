@@ -178,15 +178,12 @@ $(document).ready(function() {
             cartCountElement.style.display = cartCount > 0 ? 'inline' : 'none';
 
         }
-
         // Add click event listener to all "Add to Cart" links
         const addToCartLinks = document.querySelectorAll('.add-to-cart-link');
         addToCartLinks.forEach(function (link) {
             link.addEventListener('click', function (event) {
                 // event.preventDefault(); // Prevent the default link behavior
-                const productId = this.getAttribute('data-product-id');
-                // You can implement an AJAX call here to add the product to the cart on the server
-                
+                const productId = this.getAttribute('data-product-id');                
                 cartCount += 1;
                 updateCartCount(cartCount); 
             });

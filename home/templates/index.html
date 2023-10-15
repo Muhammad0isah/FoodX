@@ -11,7 +11,7 @@
               <h2>Burger</h2>
               <p>Grab a quik meal with a drink</p>
               <div class="item-price">
-                <p>&#8358 1,800</p>
+                <p> &#8358 1,800</p>
                 <a href="#">order now</a>
             </div>
             </div>
@@ -53,14 +53,14 @@
 
              <div class="container">
 	            <div class="row">
-			    {% for product in products %}
+			    {% for item in dishes %}
 				    <div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
 					    <div class="card" style="">
-                            <div style="background: #020202 url({{ product.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+                            <div style="background: #020202 url({{ item.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
                         </div>
 						<div class="card-body">
-							<h5 class="card-title">{{ product.name }} - <strong>${{ product.price }}</strong></h5>
-							<p class="card-text">{{ product.item_description }}</p>
+							<h5 class="card-title">{{ item.name }} - <strong> &#8358 {{ item.price }}</strong></h5>
+							<p class="card-text">{{ item.item_description }}</p>
                             <a href="#" class="btn btn-primary" style="padding: 6px 40px">Buy</a>
 							<a href="#" class="btn btn-primary">Add to cart</a>
 						</div>
@@ -90,7 +90,7 @@
                             <div style="background: #020202 url({{ i.name.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ i.name.name }} - <strong>${{ i.name.price }}</strong></h5>
+                                <h5 class="card-title">{{ i.name.name }} - <strong> &#8358 {{ i.name.price }}</strong></h5>
                                 <p class="card-text">{{ i.name.item_description }}</p>
                                 <a href="#" class="btn btn-primary" style="padding: 6px 40px">Buy</a>
                                 <a href="#" class="btn btn-primary">Add to cart</a>

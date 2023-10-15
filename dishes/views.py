@@ -12,7 +12,7 @@ def product(request):
     trending = FoodType.objects.all()
     recommend_item = RecommendProduct.objects.all()
     context = {'dishes': products, 'trending': trending, 'recommend_item': recommend_item}
-    return render(request, 'product.html', context)
+    return render(request, 'dishes.html', context)
 
 def product_list_by_category(request, category):
     products = FoodType.objects.filter(category=category)
@@ -28,6 +28,7 @@ def add_to_cart(request, id):
     if request.user.is_authenticated:
         # Assuming you have the Dishe model defined and you get the product using its ID
         product = Dishe.objects.get(id=id)
+    
 
         # Create and save the new CartItem instance
         cart_item = CartItem(user=request.user, product=product)

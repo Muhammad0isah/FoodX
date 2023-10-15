@@ -19,7 +19,7 @@ class FoodType(models.Model):
     CATEGORY_CHOICES = (
         ('drinks', 'Drinks'),
         ('gurasa', 'Gurasa'),
-        ('pizza', 'Meats'),
+        ('meat', 'Meats'),
         ('pizza', 'Pizza'),
     )
     category = models.CharField(max_length=15, choices=CATEGORY_CHOICES)

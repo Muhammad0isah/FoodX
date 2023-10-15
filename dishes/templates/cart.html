@@ -71,10 +71,10 @@
             <div class="checkout-container">
                 <h4>Cart <span class="checkout-price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>{{cart_item}}</b></span></h4>
                 {% for item in cart_items %}
-                <p><a href="{% url 'add_to_cart' item.product.id %}">{{ item.product.name }}</a> <span class="checkout-price">${{ item.product.price }}</span></p>
+                <p><a href="{% url 'add_to_cart' item.product.id %}">{{ item.product.name }}</a> <span class="checkout-price"> &#8358 {{ item.product.price }}</span></p>
                 {% endfor %}
                 <hr>
-                <p>Total <span class="checkout-price" style="color:black"><b>${{ total_price|floatformat:2 }}</b></span></p>
+                <p>Total <span class="checkout-price" style="color:black"><b> &#8358 {{ total_price|floatformat:2 }}</b></span></p>
              {% else %}
                 <p>Your cart is empty.</p>
              {% endif %}
