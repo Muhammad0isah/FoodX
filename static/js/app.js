@@ -19,53 +19,49 @@ function showSlides() {
   setTimeout(showSlides, 10000); // Change image every 5 seconds
 }
 
-//function openNav() {
-//  document.getElementById("side-nav").style.width = "250px";
-//}
-//
-//function closeNav() {
-//  document.getElementById("side-nav").style.width = "0";
-//}
-
-let menu = document.querySelector('#menu-bars');
-let navbar = document.querySelector('.navbar');
-
-menu.onclick = () =>{
-  menu.classList.toggle('fa-times');
-  navbar.classList.toggle('active');
+function openNav() {
+ document.getElementById("side-nav").style.width = "250px";
 }
 
-let section = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header .navbar a');
-
-window.onscroll = () =>{
-
-  menu.classList.remove('fa-times');
-  navbar.classList.remove('active');
-
-  section.forEach(sec =>{
-
-    let top = window.scrollY;
-    let height = sec.offsetHeight;
-    let offset = sec.offsetTop - 150;
-    let id = sec.getAttribute('id');
-
-    if(top >= offset && top < offset + height){
-      navLinks.forEach(links =>{
-        links.classList.remove('active');
-        document.querySelector('header .navbar a[href*='+id+']').classList.add('active');
-      });
-    };
-
-  });
-
+function closeNav() {
+ document.getElementById("side-nav").style.width = "0";
 }
 
 document.querySelector('#search-icon').onclick = () =>{
   document.querySelector('#search-form').classList.toggle('active');
-}
+  }
 
-document.querySelector('#close').onclick = () =>{
+  document.querySelector('#close').onclick = () =>{
   document.querySelector('#search-form').classList.remove('active');
-}
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+      // Set the initial cart count
+      let cartCount = 0;
+      const cartCountElement = document.getElementById('cart-count');
+      updateCartCount(cartCount); // Call the function to update the cart count
+
+      // Function to update the cart count in the DOM
+      function updateCartCount(count) {
+          cartCount = count;
+          cartCountElement.innerText = cartCount;
+          cartCountElement.style.display = cartCount > 0 ? 'inline' : 'none';
+
+      }
+      // Add click event listener to all "Add to Cart" links
+      const addToCartLinks = document.querySelectorAll('.add-to-cart-link');
+      addToCartLinks.forEach(function (link) {
+          link.addEventListener('click', function (event) {
+              // event.preventDefault(); // Prevent the default link behavior
+              const productId = this.getAttribute('data-product-id');                
+              cartCount += 1;
+              updateCartCount(cartCount); 
+          });
+      });
+  });
+
+
+
+
+
 
