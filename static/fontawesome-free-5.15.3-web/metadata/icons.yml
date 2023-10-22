@@ -13242,7 +13242,7 @@ newspaper:
       - headline
       - journal
       - journalism
-      - news
+      - review
       - press
   styles:
     - solid
@@ -15711,7 +15711,7 @@ rss:
       - blog
       - feed
       - journal
-      - news
+      - review
       - writing
   styles:
     - solid
@@ -15727,7 +15727,7 @@ rss-square:
       - blog
       - feed
       - journal
-      - news
+      - review
       - writing
   styles:
     - solid

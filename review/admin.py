@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import New
+from .models import CustomerReview
 
 
 # Register your models here.
-class NewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'post')
+class CustomerReviewAdmin(admin.ModelAdmin):
+    list_display = ('name', 'rate', 'comment','image')
 
 
-admin.site.register(New, NewsAdmin)
+admin.site.register(CustomerReview, CustomerReviewAdmin)

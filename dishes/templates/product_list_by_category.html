@@ -3,22 +3,14 @@
 
 {% block content %}
     {# trending section #}
-
-     <section id="trending">
-        <div class="container">
-            <div class="trending-content">
-                <h1>Trending This Week</h1>
-                <ul class = 'trending-list'>
-                    <li><a href="{% url 'product_list_by_category' 'drinks' %}">Drinks</a></li>
-                    <li><a href="{% url 'product_list_by_category' 'gurasa' %}">Gurasa</a></li>
-                    <li><a href="{% url 'product_list_by_category' 'meats' %}">Meats</a></li>
-                    <li><a href="{% url 'product_list_by_category' 'pizza' %}">Pizza</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
     <section class="dishes" id="dishes">
+    <h1 class="heading" style="padding-top:20px; text-transform: capitalize"> Trending This Week </h1>
+                    <div class = 'cat_list'>
+                        <a href="{% url 'product_list_by_category' 'drinks' %}">Drinks</a>
+                        <a href="{% url 'product_list_by_category' 'gurasa' %}">Gurasa</a>
+                        <a href="{% url 'product_list_by_category' 'meats' %}">Meats</a>
+                        <a href="{% url 'product_list_by_category' 'pizza' %}">Pizza</a>
+                     </div>
         <div class="box-container">
         {% for item in dishes %}
         <div class="box">

@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import New
+from .models import CustomerReview
 
 
 # Create your views here.
 def news(request):
-    tech_news = New.objects.all()
-    return render(request, 'news.html', {'news': tech_news})
+    tech_news = CustomerReview.objects.all()
+    return render(request, 'review.html', {'review': tech_news})
 
