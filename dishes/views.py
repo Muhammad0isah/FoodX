@@ -51,7 +51,7 @@ def add_to_cart(request, id):
         cart_count = CartItem.objects.filter(user=user).count()
         # Return the updated count in a JSON response
         return JsonResponse({'cart_count': cart_count})
-    return redirect('')
+    return redirect('dishes')
 
 
 def cart(request):

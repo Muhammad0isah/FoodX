@@ -20,11 +20,12 @@ function showSlides() {
 }
 
 function openNav() {
- document.getElementById("side-nav").style.width = "250px";
+ document.getElementById("side-nav").style.width = "50%";
 }
 
 function closeNav() {
- document.getElementById("side-nav").style.width = "0";
+ document.getElementById("side-nav").style.width = "0px";
+
 }
 
 document.querySelector('#search-icon').onclick = () =>{
