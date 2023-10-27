@@ -1,8 +1,8 @@
 from django.urls import path
 from .views import index
-from dishes.views import product
+from dishes.views import dishes
 
 urlpatterns = [
     path('', index, name='home'),
-    path('/product',name='product')
+    path('/dishes',name='dishes')
 ]

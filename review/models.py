@@ -6,4 +6,4 @@ class CustomerReview(models.Model):
     name = models.CharField(max_length=200)
     rate = models.IntegerField()
     comment = models.TextField()
-    image = models.ImageField(upload_to='static/review-images')
+    image = models.ImageField(upload_to='static/review-images',null=True,blank=True)

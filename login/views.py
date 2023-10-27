@@ -44,7 +44,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('product')
+            return redirect('dishes')
         else:
             messages.info(request, "wrong username or password")
             return redirect('login')

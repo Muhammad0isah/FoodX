@@ -25,7 +25,9 @@
             </div>
             <p class="card-text">{{ item.item_description }}</p>
             <span> &#8358 {{ item.price }}</span>
-            <a href="{% url 'add_to_cart' item.id %}" class="btn">add to cart</a>
+            <a href="{% url 'add_to_cart' item.id %}" class="btn add-to-cart-link" data-product-id="{{ i.id }}">add to cart</a>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
         </div>
         {% endfor %}
     </div>

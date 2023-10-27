@@ -35,30 +35,6 @@ document.querySelector('#search-icon').onclick = () =>{
   document.querySelector('#search-form').classList.remove('active');
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
-      // Set the initial cart count
-      let cartCount = 0;
-      const cartCountElement = document.getElementById('cart-count');
-      updateCartCount(cartCount); // Call the function to update the cart count
-
-      // Function to update the cart count in the DOM
-      function updateCartCount(count) {
-          cartCount = count;
-          cartCountElement.innerText = cartCount;
-          cartCountElement.style.display = cartCount > 0 ? 'inline' : 'none';
-
-      }
-      // Add click event listener to all "Add to Cart" links
-      const addToCartLinks = document.querySelectorAll('.add-to-cart-link');
-      addToCartLinks.forEach(function (link) {
-          link.addEventListener('click', function (event) {
-              // event.preventDefault(); // Prevent the default link behavior
-              const productId = this.getAttribute('data-product-id');                
-              cartCount += 1;
-              updateCartCount(cartCount); 
-          });
-      });
-  });
 
 
 

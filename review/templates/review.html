@@ -2,23 +2,33 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="latest-heading" style="text-align: center;">Latest News</h1>
-    <div class="container">
-	    <div class="row">
-			{% for i in news %}
-				<div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
-					<div class="card" style="">
-                        <div style="background: #020202 url({{ i.image.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+   <section class="review" id="review">
+   <br><br><br><br><br>
+    <h3 class="sub-heading"> customer's review </h3>
+    <h1 class="heading"> what they say </h1>
+    <div class="swiper-container review-slider">
+        <div class="swiper-wrapper">
+            {% for i in review%}
+            <div class="swiper-slide slide">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="{{ i.image.url }}" alt="">
+                    <div class="user-info">
+                        <h3>{{ i.name }}</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
                         </div>
-						<div class="card-body">
-							<h5 class="card-title"><a href="#">{{ i.title }}</a></h5>
-							<p class="card-text">{{ i.description }}</p>
-							<a href="#" class="btn btn-primary">read-more</a>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
+                    </div>
+                </div>
+                <p>{{ i.comment }}</p>
+            </div>
+            {% endfor %}
+     </div>
     </div>
-
+        <a href="{% url 'customer_review' %}" class="btn" style="text-transform: none">Write a review</a>
+</section>
 {% endblock content %}
