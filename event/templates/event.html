@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="dishes" id="dishes">
+    <br><br><br><br><br>
+
+
+     <h3 class="sub-heading"> our event </h3>
+    <h1 class="heading"> Latest Events </h1>
+
+    <div class="box-container">
+        {% for item in event %}
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <img src="{{ item.image_url.url}}" alt="">
+            <a href="#">{{ item.name }}</a>
+            <p class="card-text">{{ item.message }}</p>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </div>
+        {% endfor %}
+    </div>
+    </section>
+{% endblock %}

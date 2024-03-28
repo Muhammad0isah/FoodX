@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Your About Us content goes here -->
+
+    <section class="about" id="about">
+        <br><br>
+        <br><br>
+        <br><br>
+        <h3 class="sub-heading"> about us </h3>
+        <h1 class="heading">IHIMA SONS AND DAUGHTERS </h1>
+        <div class="row">
+        <div class="image">
+            <div class="box-container">
+                <div class="box">
+                    <img src="{% static 'images/cake.jpg' %}"alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h3 style="font-weight: bolder; text-align: center">Ihima Sons And Daughters</h3>
+            <h3 style="text-align: center; font-size: medium">Unity and Love</h3>
+
+           <div class="icons-container">
+    <div class="icons">
+        <i class="fas fa-book"></i> <!-- Knowledgeable -->
+        <span>Knowledgeable</span>
+    </div>
+    <div class="icons">
+        <i class="fas fa-project-diagram"></i> <!-- Network -->
+        <span>Network</span>
+    </div>
+    <div class="icons">
+        <i class="fas fa-chalkboard-teacher"></i> <!-- Mentorship -->
+        <span>Mentorship</span>
+    </div>
+</div>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+        </div>
+    </section>
+{% endblock %}

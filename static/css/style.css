@@ -57,7 +57,7 @@ section{
 }
 
 /* navigation */
-header{
+header {
     position: fixed;
     top:0; left: 0; right:0;
     background: #fff;
@@ -66,7 +66,7 @@ header{
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Add this line */
 }
 
 header .logo{
@@ -82,12 +82,14 @@ header .logo i{
 header .navbar a{
     font-size: 1.7rem;
     border-radius: .5rem;
+    text-decoration: none;
     padding:.5rem 1.5rem;
     color:var(--light-color);
 }
 
 header .navbar a:hover{
     color:#fff;
+    text-decoration: none;
     background: var(--green);
 }
 
@@ -179,59 +181,69 @@ header .navbar .closebtn{
     padding: 10px 0;
 }
 /* hero section */
-.hero-image img{
+.hero-image {
+    position: relative;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-image img {
     width: 100%;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
 }
 .hero-text {
     text-align: center;
     position: absolute;
-    top: 58%;
-    left: 15%;
+    top: 70%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-  }
-  .hero-text h2{
-    text-align: left;
-    font-size: 5em;
+}
+
+.hero-text h2{
+    text-align: center;
+    font-size: 6em; /* Increase the font size */
     color: white;
+    text-transform: uppercase;
     font-family: 'Times New Roman', Times, serif;
 }
-  .hero-text p{
-    text-align: left;
+
+.hero-text p{
+    text-align: center;
     font-family:'Times New Roman', Times, serif;
     line-height: 2;
-    font-size: 2em;
+    font-size: 4em; /* Increase the font size */
+    color: white;
     font-weight: 500;
 }
-.hero .item-price{
-    display: flex;
-    font-size: 1.5em;
-    padding: 40px 0;
-    align-items: center;
-    justify-content: space-between;
-}
-.item-price p{
-    font-size: 2em;
-    color: white;
-}
+
 .item-price a{
-    border: 1px solid white;
-    font-size: 0.8em;
+    border: 1px solid #FA2424 ;
+    font-size: 1em; /* Increase the font size */
     border-radius: 4px;
+    background: #FA2424;
     text-decoration: none;
-    padding: 13px 23px;
+    padding: 20px 30px;
     text-transform: uppercase;
     color: white;
 }
+
 .item-price a:hover{
     background-color: white;
     color: rgba(255, 0, 0, 0.9);
 }
-  
+
 .hero-text button:hover {
     background-color: #555;
     color: white;
@@ -278,7 +290,7 @@ header .navbar .closebtn{
 }
 
 .dishes .box-container .box{
-    padding:2.5rem;
+    padding:0;
     background:#fff;
     border-radius: .5rem;
     border:.1rem solid rgba(0,0,0,.2);
@@ -324,15 +336,23 @@ header .navbar .closebtn{
 }
 
 .dishes .box-container .box img{
-    height:17rem;
-    margin:1rem 0;
+    height:80%;
+    width: 100%;
+    margin:0 0;
 }
 
-.dishes .box-container .box h3{
+.dishes .box-container .box a{
     color:var(--black);
+    text-decoration: underline;
+    padding: 8px;
     font-size: 2.5rem;
 }
-
+.dishes .box-container .box p{
+    font-size: 1.5rem;
+}
+.dishes .box-container .box a:hover{
+    color:var(--green);
+}
 .dishes .box-container .box .stars{
     padding:1rem 0;
 }
@@ -369,11 +389,21 @@ header .navbar .closebtn{
     align-items: center;
 }
 
-.about .row .image{
+.about .row .image .box-container .box{
     flex:1 1 45rem;
+    padding: 0;
+    background:#fff;
+    border-radius: .5rem;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+    /* margin-right: 15px; */
+    text-align: center;
 }
 
-.about .row .image img{
+.about .row .image .box-container .box img{
+    /* border-radius: 50%; */
     width: 100%;
 }
 
@@ -424,7 +454,7 @@ header .navbar .closebtn{
     color:var(--black);
 }
 
-/* review section */
+/* member section */
 .review .slide{
     padding:2rem;
     box-shadow:var(--box-shadow);
@@ -488,12 +518,14 @@ header .navbar .closebtn{
 .footer .box-container .box h3{
     padding:.5rem 0;
     font-size: 2.5rem;
+    text-align: center;
     color:#fff;
 }
 
 .footer .box-container .box a{
     display: block;
     padding:.5rem 0;
+    text-align: center;
     font-size: 1.5rem;
     color:#fff;
 }
@@ -663,8 +695,8 @@ header .navbar .closebtn{
         height: 65vh;
     }
     .hero-text {
-        top: 40%;
-        left: 30%;
+        top: 50%;
+        left: 50%;
     }
     .hero-text h2{
         font-size: 3em;
@@ -683,6 +715,7 @@ header .navbar .closebtn{
     .item-price a{
     padding: 8px 15px;
     }
+    
 }
 @media (max-width:450px){
     .navbar {padding-top: 15px;}
@@ -699,6 +732,9 @@ header .navbar .closebtn{
 
     .order form .inputBox .input{
         width:100%;
+    }
+    .about .row .image img{
+        width: 100%;
     }
 
 }

@@ -44,7 +44,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('dishes')
+            return redirect('event')
         else:
             messages.info(request, "wrong username or password")
             return redirect('login')

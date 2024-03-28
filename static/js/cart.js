@@ -5,12 +5,12 @@ $(document).ready(function() {
     $('a.add-to-cart-link').on('click', function(event) {
         event.preventDefault();
         var link = $(this);
-        var productId = link.data('dishes-id');
+        var productId = link.data('event-id');
 
         // Get the CSRF token from the hidden input field
         var csrfToken = $('input[name=csrfmiddlewaretoken]').val();
 
-        // Send an AJAX request to add the dishes to the cart
+        // Send an AJAX request to add the event to the cart
         $.ajax({
             type: 'POST',
             url: link.attr('href'),

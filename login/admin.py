@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import CustormerDetail
+from .models import UserDetails
 # Register your models here.
-admin.site.register(CustormerDetail)
+admin.site.register(UserDetails)

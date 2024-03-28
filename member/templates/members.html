@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+   <section class="review" id="review">
+   <br><br><br><br><br>
+    <h3 class="sub-heading"> Our Members </h3>
+    <h1 class="heading"> IHIMA SONS AND DAUGHTERS GROUP MEMBERS </h1>
+    <div class="swiper-container review-slider">
+        <div class="swiper-wrapper">
+            {% for i in members%}
+            <div class="swiper-slide slide">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="{{ i.image.url }}" alt="">
+                    <div class="user-info">
+                        <h3>{{ i.name }}</h3>
+                    </div>
+                </div>
+                <p>{{ i.comment }}</p>
+            </div>
+            <BR>
+            {% endfor %}
+     </div>
+    </div>
+</section>
+{% endblock content %}

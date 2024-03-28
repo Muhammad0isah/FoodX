@@ -1,11 +1,11 @@
 from django import forms
 from django.forms import EmailInput, NumberInput, PasswordInput, TextInput, fields, widgets
-from .models import CustormerDetail
+from .models import UserDetails
 
 
 class SignupForm(forms.ModelForm):
     class Meta:
-        model = CustormerDetail
+        model = UserDetails
 
         fields = [
             'full_name',
@@ -28,7 +28,7 @@ class SignupForm(forms.ModelForm):
 
 class LoginForm(forms.ModelForm):
     class Meta:
-        model = CustormerDetail
+        model = UserDetails
         fields = [
             'username',
             'password'

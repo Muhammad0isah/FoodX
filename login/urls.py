@@ -1,9 +1,9 @@
 from django.urls import path 
 from .views import signup, login
-from dishes.views import dishes
+from event.views import event
 
 urlpatterns = [
-    # path('dishes/', dishes,name='dishes'),
+    # path('event/', event,name='event'),
     path('', login, name='login'),
     path('signup/', signup, name='signup'),
 ]

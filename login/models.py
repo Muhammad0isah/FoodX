@@ -5,7 +5,7 @@ from django.forms import widgets
 
 
 # Create your models here.
-class CustormerDetail(models.Model):
+class UserDetails(models.Model):
     full_name = models.CharField(max_length=50)
 
     def __str__(self) -> str:
